@@ -14,7 +14,6 @@ public class Server {
             System.out.println(String.format("Start server. Port: %d", PORT));
             while (true) {
                 try (Socket clientSocket = serverSocket.accept();
-                     PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
                      BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
                 ) {
                      String infoFromClient = in.readLine();
@@ -23,7 +22,7 @@ public class Server {
                 }
             }
         } catch (IOException e) {
-            new RuntimeException(e);
+            throw new RuntimeException(e);
         }
     }
 }
