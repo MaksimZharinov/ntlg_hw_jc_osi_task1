@@ -17,7 +17,7 @@ public class Server {
                      BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
                 ) {
                      String infoFromClient = in.readLine();
-                    System.out.printf("New client is connect. Info: %s\nclient port: %d",
+                    System.out.printf("New client is connect.Info: %s\nClient port: %d",
                             infoFromClient, clientSocket.getPort());
                 }
             }
